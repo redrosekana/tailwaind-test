@@ -8,4 +8,26 @@
         color:white;
         @apply bg-blue-900
     }
+
+    .bg-yellow-300{
+        background-color:orange;
+        padding:10px
+    }
+}
+
+@layer base{
+    a{
+        background-color:yellow;
+        padding:3px
+    }
+}
+
+@layer components{
+    .box1{
+        background-color:skyblue;
+        margin-bottom:5px
+    }
+    .box2{
+        @apply bg-emerald-200
+    }
 }
