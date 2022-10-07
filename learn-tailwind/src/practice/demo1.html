@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+    <script src="https://kit.fontawesome.com/70e1721a75.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="w-full bg-slate-300 h-24 flex items-center border border-1 border-red-900">
+        <div class="mx-auto w-full">
+            <div class="translate-y-[50px] flex flex-col justify-start sm:top-0 sm:left-0  sm:flex-row sm:justify-between sm:translate-y-0">
+                <div class="text-3xl cursor-pointer text-blue-900 border border-1 border-red-900 mt-3">
+                    <i class="fa-sharp fa-solid fa-car translate-y-0 sm:translate-y-2"></i>
+                </div>
+                <button class="text-3xl absolute top-0 right-5 visible sm:invisible">
+                    <i class="fa-solid fa-bars text-blue-900"></i>
+                </button>
+                <ul class="w-full flex flex-col sm:flex-row cursor-pointer translate-y-10 sm:translate-y-0 border border-1 border-red-900">
+                    <li class="mr-3 px-1 py-2 rounded-lg text-blue-400 text-md sm:text-3xl">Home</li>
+                    <li class="mr-3 px-1 py-2 rounded-lg text-blue-400 text-md sm:text-3xl">About</li>
+                    <li class="mr-3 px-1 py-2 rounded-lg text-blue-400 text-md sm:text-3xl">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        const liEl = document.getElementsByTagName("li")
+        
+        let num = 0
+        for (let e=0;e<liEl.length;e++){
+            liEl[e].setAttribute("btn-number",num)
+            liEl[e].addEventListener("click",()=>{
+                liEl[e].classList.add("click-btn")
+                
+                for (let i=0;i<liEl.length;i++){
+                    const btnNumber = parseInt(liEl[e].getAttribute("btn-number"))
+                    if (i === btnNumber){
+                        continue
+                    }else{
+                        liEl[i].classList.remove("click-btn")
+                    }
+                    
+                }
+            })
+            num++
+        }
+    </script>
+</body>
+</html>
