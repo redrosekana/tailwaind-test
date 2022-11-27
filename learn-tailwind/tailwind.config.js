@@ -1,24 +1,28 @@
 /** @type {import('tailwindcss').Config} */
-/* extend คือการ config เพิ่มเติมจาก utilities ที่มีอยู่ */
-/* ถ้าหาก congig นอก extend คือการแก้ไข utilities ใหม่ */
+
+//* extend คือการ config เพิ่มเติมจาก utilities ที่มีอยู่ จะเป็นการ override utility
+//* ถ้าหาก config ใน theme คือการแก้ไข utilities ใหม่ ควรจะกำหนดให้ครบ
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     screens:{
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      "sm":"460px",
+      "md":"760px",
+      "lg":"992px",
+      "xl":"1280px"
     },
     extend: {
       colors:{
-        'kanatest':'red'
+        'primary':'blue'
       },
       screens:{
-        'small':'300px',
-        'medium':'400px',
-        'large':'500px',
+        'telephone':'300px',
+        'tablet':'400px',
+        'computer':'500px',
+      },
+      spacing:{
+        "1":"10px",
+        "2":"20px"
       },
     },
   },
